@@ -1,0 +1,11 @@
+1. How is the logged in User being kept track of?
+    When logging in, the user is stored in the Global Flask object. This way, it can be stored and used in other routes to make sure the correct user is logged in or to check details of the User.
+
+2. What is Flask's g object?
+    The Flask g object is the Global Object. This is used to store information that is wiped clean before requests to make sure it doesn't mix up or overload the data.
+
+3. What is the purpose of add_user_to_g?
+    This will add the logged in user object to the Global object. This allows the information to be stored while the User is logged in and be wiped clean before the next request.
+
+4. What does @app.before_request mean?
+    This is used to call a function before a request. This will prepare the app for an upcoming request. In this app for example, it will login, add_user_to_g, or logout before the next request is made.
